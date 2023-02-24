@@ -5,33 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="public/style.css" />
-    <link rel="shortcut icon" href="public/assets/favicon.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="public/assets/favicon.png"
+      type="image/x-icon"
+    />
     <title>Weather Mood</title>
   </head>
   <body>
     <div class="container">
       <div class="current-info">
         <div class="date-container">
-          <div class="time" id="time">12:30 <span id="am-pm">PM</span></div>
-          <div class="date" id="date">Monday, 24 May</div>
+          <div class="time" id="time"><span id="am-pm"></span></div>
+          <div class="date" id="date"></div>
 
-          <div class="others" id="current-weather-items">
-            
+          <div class="others" id="current-weather-items"></div>
+        </div>
+        <div class="place-and-activity">
+          <div class="activity">
+            <div><p>Activity to do:</p></div>
+            <div><p id="activity-suggestion"></p></div>
           </div>
-        </div>
-        <div class="activity">
-          <div><p>Activity to do:</p></div>
-          <div><p id="acticity-suggestion">Cycling on the beach</p></div>
-        </div>
-        <div class="place-container">
-          <div class="time-zone" id="time-zone"></div>
-          <div id="country" class="country"></div>
+          <div class="place-container">
+            <div class="time-zone" id="time-zone"></div>
+            <div id="country" class="country"></div>
+          </div>
         </div>
       </div>
     </div>
-    
+
     <div id="music"></div>
-    <script src="https://open.spotify.com/embed-podcast/iframe-api/v1" async></script>
+    <script
+      src="https://open.spotify.com/embed-podcast/iframe-api/v1"
+      async
+    ></script>
     <script src="src/app.js"></script>
   </body>
 </html>

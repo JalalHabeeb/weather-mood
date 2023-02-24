@@ -7,7 +7,6 @@
 
 body {
   font-family: "Tajawal", sans-serif;
-  background-image: url(https://cdn.pixabay.com/photo/2018/05/30/00/24/thunderstorm-3440450_960_720.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -43,17 +42,28 @@ body {
 }
 
 .place-container {
-  text-align: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: end;
+  row-gap: 5px;
 }
 
 .place-container .time-zone {
   font-size: 30px;
   font-weight: 100;
+  background-color: rgb(24, 24, 27, 0.6);
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .place-container .country {
   font-size: 12px;
   font-weight: 700;
+  background-color: rgb(24, 24, 27, 0.6);
+  border-radius: 10px;
+  padding: 10px;
+  width: 2rem;
 }
 
 .current-info .others {
@@ -78,29 +88,36 @@ body {
 }
 
 .activity {
+  height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: wheat;
-  font-size: 3rem;
+  font-size: 2rem;
+  background-color: rgb(24, 24, 27, 0.5);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.place-and-activity {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
 }
 
 #music {
   background: rgb(24, 24, 27, 0.68);
   padding: 25px;
-  position: fixed;
   margin-bottom: 0;
   bottom: 0;
   color: wheat;
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
-@media only screen and (max-width: 730px) {
-  .current-info {
-    display: flex;
-    justify-content: space-between;
-  }
+@media only screen and (max-width: 830px) {
   .container {
     padding: 20px;
   }
@@ -114,18 +131,40 @@ body {
   .place-container .time-zone {
     font-size: 20px;
   }
-
-  .current-info .others {
-    font-size: 12px;
+  .place-and-activity {
+    width: 50vw;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
   }
 
-  .current-info .others .weather-item {
-    font-size: 14px;
+  .activity {
+    margin-top: 0px;
   }
 }
 
-iframe {
-  margin-bottom: -50px;
-  margin-left: 50%;
-  transform: translateX(-50%);
+@media only screen and (max-width: 538px) {
+  .activity {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 489px) {
+  .place-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .activity {
+    width: 90vw;
+    margin-top: 60px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  iframe {
+    height: 100px;
+  }
 }

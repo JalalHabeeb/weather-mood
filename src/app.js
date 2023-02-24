@@ -4,7 +4,7 @@ const currentWeatherItemsEl = document.getElementById("current-weather-items");
 const timezone = document.getElementById("time-zone");
 const countryEl = document.getElementById("country");
 const music = document.getElementById("music");
-const currentTempEl = document.getElementById("current-temp");
+const activitySuggestion = document.getElementById("activity-suggestion");
 
 const API_KEY = "659a35b6764b4738915d9fa508aad814";
 
@@ -76,10 +76,9 @@ const detectCity = (data) => {
   countryEl.textContent = `${country_code}`;
 };
 
-
 const musicSuggest = (data) => {
-  const sunny = [800, 801, 802, 803];
-  const cloudy = [804, 900, 751, 741, 731, 721, 711, 700];
+  const sunny = [800, 801, 803];
+  const cloudy = [802, 804, 900, 751, 741, 731, 721, 711, 700];
   const rainy = [522, 521, 520, 511, 502, 501, 500, 302, 301, 300];
   const snowy = [623, 622, 621, 612, 611, 610, 602, 601, 600];
   const stormy = [233, 232, 231, 230, 202, 201, 200];
@@ -87,14 +86,24 @@ const musicSuggest = (data) => {
   let { code } = data.data[0].weather;
 
   if (snowy.indexOf(code) !== -1) {
-    music.innerHTML = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXd9rSDyQguIk?utm_source=generator" width="100%" height="200" frameBorder="1" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+    music.innerHTML = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXd9rSDyQguIk?utm_source=generator" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+    activitySuggestion.textContent = "Drinking Hot drink with a movie";
+    document.body.style.backgroundImage = "url(../public/assets/snow.jpg)";
   } else if (rainy.indexOf(code) !== -1) {
-    music.innerHTML = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7YCknf2jT6s?utm_source=generator" width="100%" height="200" frameBorder="1" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+    music.innerHTML = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7YCknf2jT6s?utm_source=generator" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+    activitySuggestion.textContent = "Reading a book in the library";
+    document.body.style.backgroundImage = "url(../public/assets/rain.jpg)";
   } else if (cloudy.indexOf(code) !== -1) {
-    music.innerHTML = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4s3V2rTswzO?utm_source=generator" width="100%" height="200" frameBorder="1" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+    music.innerHTML = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4s3V2rTswzO?utm_source=generator" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+    activitySuggestion.textContent = "Practice JavaScript";
+    document.body.style.backgroundImage = "url(../public/assets/cloud.jpg)";
   } else if (sunny.indexOf(code) !== -1) {
     music.innerHTML = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX5xiztvBdlUf?utm_source=generator" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+    activitySuggestion.textContent = "Cycling on the beach";
+    document.body.style.backgroundImage = "url(../public/assets/sun.jpg)";
   } else if (stormy.indexOf(code) !== -1) {
-    music.innerHTML = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6XyY86QOPPrYVGvF9ch6wz?utm_source=generator" width="100%" height="200" frameBorder="1" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+    music.innerHTML = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6XyY86QOPPrYVGvF9ch6wz?utm_source=generator" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+    activitySuggestion.textContent = "Play video games";
+    document.body.style.backgroundImage = "url(../public/assets/storm.jpg)";
   }
-}
+};
