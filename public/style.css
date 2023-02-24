@@ -64,84 +64,45 @@ body {
   border-radius: 10px;
   margin: 10px 0;
   border: 1px solid wheat;
+  font-weight: 400;
 }
 
 .current-info .others .weather-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.future-forecast {
+.weather-icon img {
+  width: 50px;
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+  font-size: 3rem;
+}
+
+#music {
   background: rgb(24, 24, 27, 0.68);
   padding: 25px;
   position: fixed;
+  margin-bottom: 0;
   bottom: 0;
-  display: flex;
   color: wheat;
   width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.future-forecast .today {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid wheat;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-.future-forecast .today .day {
-  padding: 5px 15px;
-  background: #3c3c44;
-  border-radius: 50px;
-  text-align: center;
-}
-
-.future-forecast .today .temp {
-  font-size: 20px;
-  padding-top: 15px;
-}
-
-.future-forecast .weather-forecast {
-  display: flex;
-}
-
-.weather-forecast .weather-forecast-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 10px;
-  border: 1px solid wheat;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-.weather-forecast .weather-forecast-item .day {
-  padding: 5px 15px;
-  background: #3c3c44;
-  border-radius: 50px;
-  text-align: center;
-}
-
-.weather-forecast .weather-forecast-item .temp {
-  font-weight: 100;
 }
 
 @media only screen and (max-width: 730px) {
+  .current-info {
+    display: flex;
+    justify-content: space-between;
+  }
   .container {
     padding: 20px;
-  }
-  .future-forecast {
-    justify-content: start;
-    align-items: none;
-    overflow-y: scroll;
-  }
-
-  .future-forecast .today .temp {
-    font-size: 23px;
   }
 
   .date-container .time {
@@ -154,11 +115,6 @@ body {
     font-size: 20px;
   }
 
-  .place-container {
-    text-align: end;
-    margin-top: 15px;
-  }
-
   .current-info .others {
     font-size: 12px;
   }
@@ -168,10 +124,8 @@ body {
   }
 }
 
-@media only screen and (max-width: 1000px){
-  .future-forecast {
-    justify-content: start;
-    align-items: none;
-    overflow-y: scroll;
-  }
+iframe {
+  margin-bottom: -50px;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
