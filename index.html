@@ -5,97 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="public/style.css" />
-    <link rel="shortcut icon" href="public/assets/favicon.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="public/assets/favicon.png"
+      type="image/x-icon"
+    />
     <title>Weather Mood</title>
   </head>
   <body>
     <div class="container">
       <div class="current-info">
         <div class="date-container">
-          <div class="time" id="time">12:30 <span id="am-pm">PM</span></div>
-          <div class="date" id="date">Monday, 24 May</div>
+          <div class="time" id="time"><span id="am-pm"></span></div>
+          <div class="date" id="date"></div>
 
-          <div class="others" id="current-weather-items">
-            
+          <div class="others" id="current-weather-items"></div>
+        </div>
+        <div class="place-and-activity">
+          <div class="activity">
+            <div><p>Activity to do:</p></div>
+            <div><p id="activity-suggestion"></p></div>
+          </div>
+          <div class="place-container">
+            <div class="time-zone" id="time-zone"></div>
+            <div id="country" class="country"></div>
           </div>
         </div>
-        <div class="place-container">
-          <div class="time-zone" id="time-zone">The Hague</div>
-          <div id="country" class="country">NL</div>
-        </div>
       </div>
     </div>
-    <div class="future-forecast">
-      <div class="today" id="current-temp">
-        <img
-          src="http://openweathermap.org/img/wn/10d@2x.png"
-          alt="weather icon"
-          class="w-icon"
-        />
-        <div class="other">
-          <div class="day">Monday</div>
-          <div class="temp">Night - 25.6&#176; C</div>
-          <div class="temp">Day - 25.6&#176; C</div>
-        </div>
-      </div>
 
-      <div class="weather-forecast" id="weather-forecast">
-        <div class="weather-forecast-item">
-          <div class="day">Tue</div>
-          <img
-            src="http://openweathermap.org/img/wn/10d@2x.png"
-            alt="weather icon"
-            class="w-icon"
-          />
-          <div class="temp">Night - 25.6&#176; C</div>
-          <div class="temp">Day - 25.6&#176; C</div>
-        </div>
-
-        <div class="weather-forecast-item">
-          <div class="day">Wed</div>
-          <img
-            src="http://openweathermap.org/img/wn/10d@2x.png"
-            alt="weather icon"
-            class="w-icon"
-          />
-          <div class="temp">Night - 25.6&#176; C</div>
-          <div class="temp">Day - 25.6&#176; C</div>
-        </div>
-
-        <div class="weather-forecast-item">
-          <div class="day">Thur</div>
-          <img
-            src="http://openweathermap.org/img/wn/10d@2x.png"
-            alt="weather icon"
-            class="w-icon"
-          />
-          <div class="temp">Night - 25.6&#176; C</div>
-          <div class="temp">Day - 25.6&#176; C</div>
-        </div>
-
-        <div class="weather-forecast-item">
-          <div class="day">Fri</div>
-          <img
-            src="./public/assets/icons/a01d.png"
-            alt="weather icon"
-            class="w-icon"
-          />
-          <div class="temp">Night - 25.6&#176; C</div>
-          <div class="temp">Day - 25.6&#176; C</div>
-        </div>
-
-        <div class="weather-forecast-item">
-          <div class="day">Sat</div>
-          <img
-            src="http://openweathermap.org/img/wn/10d@2x.png"
-            alt="weather icon"
-            class="w-icon"
-          />
-          <div class="temp">Night - 25.6&#176; C</div>
-          <div class="temp">Day - 25.6&#176; C</div>
-        </div>
-      </div>
-    </div>
+    <div id="music"></div>
+    <script
+      src="https://open.spotify.com/embed-podcast/iframe-api/v1"
+      async
+    ></script>
     <script src="src/app.js"></script>
   </body>
 </html>
