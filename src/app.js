@@ -31,10 +31,10 @@ const getWeatherData = () => {
     let { latitude, longitude } = success.coords;
 
     fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min&current_weather=true&timezone=Europe%2FBerlin&timezone=Europe%2FBerlin`
+      `https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&city=thehague&key=659a35b6764b4738915d9fa508aad814&lang=en`
     ).then((res) =>
       res.json().then((data) => {
-        console.log(data);
+        console.log(data.data);
         showWeatherDate(data);
       })
     );
@@ -44,18 +44,26 @@ const getWeatherData = () => {
 getWeatherData();
 
 const showWeatherDate = (data) => {
-  let { temperature, winddirection, windspeed } = data.current_weather;
-    currentWeatherItemsEl.innerHTML = 
-        `<div class="weather-item">
+  let { temp, sunrise, sunset, wind_spd } = data.data[0];
+  let { description, icon } = data.data[0].weather;
+    currentWeatherItemsEl.innerHTML = `<div class="weather-item">
             <div>Temperature</div>
-            <div>${temperature}&#176; C</div>
+            <div>${temp}&#176; C</div>
         </div>
         <div class="weather-item">
-            <div>Wind Direction</div>
-            <div>${winddirection}</div>
+            <div>Sunrise</div>
+            <div>${sunrise}</div>
+        </div>
+        <div class="weather-item">
+            <div>Sunset</div>
+            <div>${sunset}</div>
         </div>
         <div class="weather-item">
             <div>Wind Speed</div>
-            <div>${windspeed} Km/h</div>
+            <div>${wind_spd.toFixed(2)} Km/h</div>
+        </div>
+        <div class="weather-item">
+            <div>${description}</div>
+            <div><img src="./public/assets/icons/${icon}.png"/></div>
         </div>`;
 };
