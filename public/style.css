@@ -16,9 +16,11 @@ body {
 .container {
   color: wheat;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   row-gap: 20px;
   padding: 10px;
+  height: 100%;
 }
 
 .current-info {
@@ -117,7 +119,7 @@ body {
   border-radius: 20px;
 }
 
-.read-more{
+.read-more {
   text-decoration: none;
   color: rgb(13, 87, 118);
   text-shadow: 2px 2px 2px black;
@@ -126,9 +128,6 @@ body {
   text-shadow: 0px 0px 10px rgb(85, 238, 252);
 }
 
-
-
-
 /* Error Div */
 
 .error-div {
@@ -136,7 +135,7 @@ body {
   max-width: 80%;
   height: 200px;
   position: fixed;
-  background: rgba(255, 0, 0, .8);
+  background: rgba(255, 0, 0, 0.8);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -150,45 +149,58 @@ body {
   box-shadow: 0px 0px 7px black;
 }
 
-.refresh-button{
- font-size: 1.5rem;
- padding: 5px;
- border: none;
- border-radius: 5px;
- cursor: pointer;
- box-shadow: 0px 0px 5px;
- opacity: 0.7;
- transition: all ease-in-out .1s;
+.refresh-button {
+  font-size: 1.5rem;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px;
+  opacity: 0.7;
+  transition: all ease-in-out 0.1s;
 }
 
-.refresh-button:hover{
+.refresh-button:hover {
   box-shadow: 0px 0px 10px;
   transform: scale(1.1);
-  opacity: .9;
+  opacity: 0.9;
+}
+
+footer {
+  width: 250px;
+  margin: 0px auto 5px auto;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+}
+
+footer a {
+  font-weight: bold;
+  color: black;
 }
 
 /* Media */
 @media screen and (max-width: 1075px) and (min-width: 799px) {
-  .place-container .time-zone{
+  .place-container .time-zone {
     font-size: 20px;
   }
 
-  .activity{
+  .activity {
     width: 50%;
     font-size: 20px;
   }
 }
 @media screen and (max-width: 800px) {
-  .current-info{
+  .current-info {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .activity{
+  .activity {
     font-size: 20px;
     width: 90%;
   }
-  .place-container{
+  .place-container {
     position: absolute;
     right: 5px;
     top: 5px;
@@ -196,8 +208,7 @@ body {
 }
 
 @media screen and (max-width: 490px) {
-  .container{
+  .container {
     padding-top: 70px;
   }
-  
 }

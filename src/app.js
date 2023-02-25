@@ -38,32 +38,32 @@ getWeatherData = () => {
         showWeatherDate(data);
         detectCity(data);
         musicSuggest(data);
-        return data
+        return data;
       })
       .catch((error) => {
-        console.log('error' + error.message)
+        console.log("error" + error.message);
         //Error div
-        const errorDiv = document.createElement('div');
-        errorDiv.setAttribute('class', 'error-div')
+        const errorDiv = document.createElement("div");
+        errorDiv.setAttribute("class", "error-div");
         document.body.appendChild(errorDiv);
 
         //Error paragraph
-        const errorPar = document.createElement('p')
-        errorDiv.appendChild(errorPar)
+        const errorPar = document.createElement("p");
+        errorDiv.appendChild(errorPar);
         errorPar.textContent = "Oops!! Please reload the page";
 
         //button Div
-        const buttonDiv = document.createElement('div')
+        const buttonDiv = document.createElement("div");
         errorDiv.appendChild(buttonDiv);
 
         //Refresh Button
-        const button = document.createElement('button')
-        button.setAttribute('class', 'refresh-button')
-        button.textContent = 'Reload'
+        const button = document.createElement("button");
+        button.setAttribute("class", "refresh-button");
+        button.textContent = "Reload";
         buttonDiv.appendChild(button);
-        button.addEventListener('click', () => {
+        button.addEventListener("click", () => {
           location.reload();
-        })
+        });
       });
   });
 };
@@ -104,8 +104,8 @@ const detectCity = (data) => {
 const musicSuggest = (data) => {
   const sunny = [800, 801, 803];
   const cloudy = [802, 804, 900, 751, 741, 731, 721, 711, 700];
-  const rainy = [ 522, 521, 520, 511, 502, 501, 500, 302, 301, 300];
-  const snowy = [ 623, 622, 621, 612, 611, 610, 602, 601, 600];
+  const rainy = [522, 521, 520, 511, 502, 501, 500, 302, 301, 300];
+  const snowy = [623, 622, 621, 612, 611, 610, 602, 601, 600];
   const stormy = [233, 232, 231, 230, 202, 201, 200];
 
   let { code } = data.data[0].weather;
