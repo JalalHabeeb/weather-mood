@@ -8,6 +8,7 @@
 body {
   font-family: "Tajawal", sans-serif;
   background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   height: 100vh;
 }
