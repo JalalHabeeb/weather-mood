@@ -9,19 +9,20 @@ body {
   font-family: "Tajawal", sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
   height: 100vh;
 }
 
 .container {
-  padding: 20px 70px;
   color: wheat;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 10px;
 }
 
 .current-info {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .date-container {
@@ -30,6 +31,7 @@ body {
 
 .date-container .time {
   font-size: 70px;
+  text-shadow: 1px 1px 3px black;
 }
 
 .date-container #am-pm {
@@ -39,14 +41,14 @@ body {
 
 .date-container .date {
   font-size: 30px;
+  text-shadow: 1px 1px 3px black;
 }
 
 .place-container {
   display: flex;
   flex-direction: column;
-  justify-content: start;
   align-items: end;
-  row-gap: 5px;
+  gap: 5px;
 }
 
 .place-container .time-zone {
@@ -88,83 +90,113 @@ body {
 }
 
 .activity {
-  height: 20vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   color: wheat;
   font-size: 2rem;
-  background-color: rgb(24, 24, 27, 0.5);
+  background-color: rgb(24, 24, 27, 0.8);
   border-radius: 20px;
   padding: 10px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  text-align: justify;
 }
 
 .place-and-activity {
-  width: 50%;
-  display: flex;
+  width: 65vw;
+  /* display: flex;
   justify-content: space-between;
+  gap: 20px; */
 }
 
 #music {
-  background: rgb(24, 24, 27, 0.68);
-  padding: 25px;
-  margin-bottom: 0;
-  bottom: 0;
+  background: rgb(24, 24, 27, 0.5);
+  padding: 10px;
   color: wheat;
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  border-radius: 20px;
 }
 
-@media only screen and (max-width: 830px) {
-  .container {
-    padding: 20px;
-  }
+.read-more{
+  text-decoration: none;
+  color: rgb(13, 87, 118);
+  text-shadow: 2px 2px 2px black;
+}
+.read-more:hover {
+  text-shadow: 0px 0px 10px rgb(85, 238, 252);
+}
 
-  .date-container .time {
-    font-size: 50px;
-  }
 
-  .date-container #am-pm,
-  .date-container .date,
-  .place-container .time-zone {
+
+
+/* Error Div */
+
+.error-div {
+  width: 500px;
+  max-width: 80%;
+  height: 200px;
+  position: fixed;
+  background: rgba(255, 0, 0, .8);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2rem;
+  color: wheat;
+  box-shadow: 0px 0px 7px black;
+}
+
+.refresh-button{
+ font-size: 1.5rem;
+ padding: 5px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ box-shadow: 0px 0px 5px;
+ opacity: 0.7;
+ transition: all ease-in-out .1s;
+}
+
+.refresh-button:hover{
+  box-shadow: 0px 0px 10px;
+  transform: scale(1.1);
+  opacity: .9;
+}
+
+/* Media */
+@media screen and (max-width: 1075px) and (min-width: 799px) {
+  .place-container .time-zone{
     font-size: 20px;
   }
-  .place-and-activity {
-    width: 50vw;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-  }
 
-  .activity {
-    margin-top: 0px;
+  .activity{
+    width: 50%;
+    font-size: 20px;
   }
 }
-
-@media only screen and (max-width: 538px) {
-  .activity {
-    font-size: 25px;
-  }
-}
-
-@media only screen and (max-width: 489px) {
-  .place-container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-  .activity {
-    width: 90vw;
-    margin-top: 60px;
-  }
-
-  body {
+@media screen and (max-width: 800px) {
+  .current-info{
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
-  iframe {
-    height: 100px;
+  .activity{
+    font-size: 20px;
+    width: 90%;
   }
+  .place-container{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .container{
+    padding-top: 70px;
+  }
+  
 }
