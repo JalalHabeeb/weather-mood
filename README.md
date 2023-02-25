@@ -6,3 +6,5 @@
 This humble app has been made in contribution to the love memory of the late **Chester Bennington** the lead singer of **Linkin Park** who passed away in Jully 20, 2017.
 
 The app detects the location of the user and give the current weather conditions, and based on the current weather conditions suggest a Linkin Park album to play, with some information about the album. It also changes the background image to the album art cover.
+
+Check the app on Netlify here [Linkin Park Weather Mood](https://linkin-park-weather-mood.netlify.app)
