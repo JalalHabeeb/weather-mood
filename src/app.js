@@ -5,8 +5,14 @@ const timezone = document.getElementById("time-zone");
 const countryEl = document.getElementById("country");
 const music = document.getElementById("music");
 const activitySuggestion = document.getElementById("activity-suggestion");
-
+const splash = document.querySelector('.splash')
 const API_KEY = "659a35b6764b4738915d9fa508aad814";
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    splash.classList.add("display-none");
+  }, 5000);
+});
 
 setInterval(() => {
   const time = new Date();
@@ -103,8 +109,8 @@ const detectCity = (data) => {
 
 const musicSuggest = (data) => {
   const sunny = [800, 801, 803];
-  const cloudy = [802, 804, 900, 751, 741, 731, 721, 711, 700];
-  const rainy = [522, 521, 520, 511, 502, 501, 500, 302, 301, 300];
+  const cloudy = [ 804, 900, 751, 741, 731, 721, 711, 700];
+  const rainy = [802, 522, 521, 520, 511, 502, 501, 500, 302, 301, 300];
   const snowy = [623, 622, 621, 612, 611, 610, 602, 601, 600];
   const stormy = [233, 232, 231, 230, 202, 201, 200];
 
@@ -132,3 +138,5 @@ const musicSuggest = (data) => {
     document.body.style.backgroundImage = "url(../public/assets/storm.jpg)";
   }
 };
+
+
