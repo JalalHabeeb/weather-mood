@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -78,7 +78,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   margin: 10px 0;
-  border: 1px solid wheat;
+  border: 1px solid whitesmoke;
   font-weight: 400;
 }
 
@@ -114,6 +114,7 @@ body {
   background: rgb(24, 24, 27, 0.5);
   padding: 10px;
   width: 100%;
+
   border-radius: 20px;
 }
 
@@ -178,6 +179,49 @@ footer a {
   color: whitesmoke;
 }
 
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 200;
+}
+
+.display-none {
+  opacity: 0;
+  z-index: -200;
+  transition: all 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.fade-in h1 {
+  height: 30px;
+}
+
+.fade-in p {
+  height: 30px;
+}
+
 /* Media */
 @media screen and (max-width: 1075px) and (min-width: 799px) {
   .place-container .time-zone {
@@ -187,6 +231,10 @@ footer a {
   .activity {
     width: 50%;
     font-size: 20px;
+  }
+
+  .fade-in {
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 800px) {
@@ -204,50 +252,20 @@ footer a {
     right: 5px;
     top: 5px;
   }
+  .fade-in {
+    font-size: 10px;
+    text-align: center;
+    row-gap: 30px;
+  }
 }
 
 @media screen and (max-width: 490px) {
   .container {
     padding-top: 70px;
   }
-}
-
-
-.splash{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: black;
-  z-index: 200;
-  text-align: center;
-  line-height: 100vh;
-}
-
-.display-none{
-  opacity: 0;
-  z-index: -200;
-  transition: all 0.5s;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
+  .fade-in {
+    font-size: 10px;
+    text-align: center;
+    row-gap: 30px;
   }
-}
-
-.fade-in{
-  opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
-}
-
-.fade-in h1{
-  height: 30px
-}
-
-.fade-in p{
-  height: 30px;
-  margin-right: 100px;
-  text-align: right;
 }
