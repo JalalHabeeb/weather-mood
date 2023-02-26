@@ -6,7 +6,7 @@ const countryEl = document.getElementById("country");
 const music = document.getElementById("music");
 const activitySuggestion = document.getElementById("activity-suggestion");
 const splash = document.querySelector('.splash')
-const API_KEY = "659a35b6764b4738915d9fa508aad814";
+const API_KEY = config.API_KEY
 
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
