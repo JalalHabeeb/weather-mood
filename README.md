@@ -9,7 +9,7 @@ The app detects the location of the user and give the current weather conditions
 
 ## Structure
 
-─ public
+`─ public
 |   └── assets
 |   └── style.css
 ─ src
@@ -21,6 +21,6 @@ The app detects the location of the user and give the current weather conditions
 |   └── main.js
 |   └── musicSuggest.js
 |   └── showWeather.js
-─ index.html
+─ index.html`
 
 Check the app on Netlify here [Linkin Park Weather Mood](https://linkin-park-weather-mood.netlify.app)
