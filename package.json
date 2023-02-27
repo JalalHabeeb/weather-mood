@@ -1,0 +1,14 @@
+{
+  "name": "lp-weather-mood",
+  "version": "1.0.0",
+  "scripts": {
+    "prettier:write": "prettier --write .",
+    "prettier:check": "prettier --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JalalHabeeb/weather-mood.git"
+  },
+  "author": "Jalal Habeeb",
+  "homepage": "https://github.com/JalalHabeeb/weather-mood"
+}

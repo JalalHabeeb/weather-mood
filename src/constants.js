@@ -1,0 +1,9 @@
+export const TIME_EL = document.getElementById("time");
+export const DATE_EL = document.getElementById("date");
+export const CURRENT_WEATHER_ITEMS_EL = document.getElementById("current-weather-items");
+export const TIME_ZONE = document.getElementById("time-zone");
+export const COUNTRY_EL = document.getElementById("country");
+export const MUSIC = document.getElementById("music");
+export const ACTIVITY_SUGGESTION = document.getElementById("activity-suggestion");
+export const SPLASH = document.querySelector(".splash");
+export const API_KEY = config.API_KEY;
