@@ -10,7 +10,6 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height: 100vh;
   color: whitesmoke;
 }
 
@@ -223,7 +222,16 @@ footer a {
 }
 
 /* Media */
+@media screen and (min-width: 1076px) {
+  body {
+    height: 100vh;
+  }
+}
+
 @media screen and (max-width: 1075px) and (min-width: 799px) {
+  body {
+    height: 100vh;
+  }
   .place-container .time-zone {
     font-size: 20px;
   }
